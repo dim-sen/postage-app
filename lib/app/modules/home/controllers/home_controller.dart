@@ -9,11 +9,18 @@ class HomeController extends GetxController {
   var provinceIdDestination = "0".obs;
   var cityIdDestination = "0".obs;
 
+  double initialWeight = 0.0;
+  String unit = "Gram";
+
   TextEditingController weight;
+
+  void changeWeight(String value) {
+
+  }
 
   @override
   void onInit() {
-    weight = TextEditingController();
+    weight = TextEditingController(text: "$initialWeight");
     super.onInit();
   }
 

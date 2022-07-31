@@ -16,9 +16,28 @@ class Weight extends GetView<HomeController> {
       children: [
         Expanded(
           child: TextField(
+            autocorrect: false,
             controller: controller.weight,
+            keyboardType: const TextInputType.numberWithOptions(decimal: true),
+            decoration: InputDecoration(
+              labelText: "Weight",
+              hintText: "Weight of the item",
+              border: OutlineInputBorder(),
+            ),
           ),
         ),
+        SizedBox(width: 10,),
+        Container(
+          width: 150,
+          child: DropdownSearch<String>(
+            mode: Mode.BOTTOM_SHEET,
+            showSelectedItem: true,
+            items: ["(Kg) Kilogram", "(Hg) Ons", "(g) Gram", "(mg) Miligram"],
+            label: "Unit Weight",
+            selectedItem: "(g) Gram",
+            onChanged: ((value) => controller.changeWeight(value)),
+          ),
+        )
       ],
     );
   }

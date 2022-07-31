@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:postage/app/modules/home/controllers/home_controller.dart';
 import 'package:postage/app/modules/home/views/widgets/province_box.dart';
 import 'package:postage/app/modules/home/views/widgets/city_box.dart';
+import 'package:postage/app/modules/home/views/widgets/weight_box.dart';
 
 class HomeView extends GetView<HomeController> {
   @override
@@ -31,6 +32,7 @@ class HomeView extends GetView<HomeController> {
               controller.provinceIdDestination.value,
               type: "destination"
           )),
+          Weight(),
         ],
       ),
     );
